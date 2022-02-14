@@ -1,0 +1,67 @@
+#nav{
+    padding:.8rem 1rem;
+    background-color: var(--secondary-color);
+    color:var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left{
+    display: flex;
+    align-items: center;
+}
+
+#nav h3{
+    font-size:1.85rem;
+    text-transform: uppercase;
+    font-family: "Passion-one";
+    font-weight: lighter;
+    display: flex;
+    align-items: flex-end;
+}
+
+.ham-btn{
+    display:flex;
+    flex-direction: column;
+    margin-right: 1rem;
+    cursor: pointer;
+    padding:.5rem;
+}
+
+.ham-btn:hover{
+    background-color: #ffffff30;
+}
+
+.ham-btn span{
+    width: 25px;
+    height: 2px;
+    background-color: var(--primary-color);
+    margin:.15rem 0;
+}
+
+.header-logo{
+    width: 40px;
+    align-items: flex-end;
+    margin-left:.5rem;
+}
+
+.nav-right{
+    display: flex;
+}
+
+.nav-right li{
+    list-style: none;
+    margin:.5rem;
+    cursor: pointer;
+}
+
+.nav-right li:hover{
+    color:rgb(250, 243, 243);
+}
+
+@media (max-width: 500px){
+    .nav-right{
+        display: none;
+    }
+}

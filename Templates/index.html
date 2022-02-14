@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {% static '/css/common.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    
+    <title>Uthiram - Home</title>
+</head>
+
+<body>
+    <header id="nav">
+        <div class="nav-left">
+            <div class="ham-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h3>Uthiram
+                <img src="{% static 'images/uthiram-logo.svg' %}" alt="" class="header-logo">
+            </h3>
+        </div>
+        <ul class="nav-right">
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+        </ul>
+    </header>
+    <main>
+       
+        <div>
+            <a href="/requestpage/">
+            <div class="need-blood">
+                <img src="{% static 'images/need-blood-logo.svg' %}" alt="">
+                <p>Need Blood</p>
+            </div>
+            </a>
+            <div>OR</div>
+            <a href="/loginpage/">
+            <div class="login-signup">
+                <img src="{% static 'images/uthiram-logo-filled.svg' %}" alt="">
+                <p>Login / Sign-up</p>
+            </div>
+            </a>
+        </div>
+    </main>
+</body>
+
+</html>
+ 

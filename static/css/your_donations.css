@@ -1,0 +1,33 @@
+@import url(./common.css);
+
+.your-donations-cont{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 1rem;
+    align-items: flex-start;
+}
+
+.your-donations-cont .donations{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+    box-shadow: 0px 0px 8px 2px rgba(255, 0, 0, 0.1);
+    border-radius: 9px;
+}
+
+.donations div{
+    margin-top: 0.1rem;
+    font-size: 1.2rem;
+}
+
+.donations .donations--title{
+    color: var(--secondary-color);
+    margin-right: 5px;
+}
+
+.donations .donations--title::after{
+    content: ":";
+}

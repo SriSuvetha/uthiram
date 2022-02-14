@@ -1,0 +1,42 @@
+/*************************************************/
+@font-face {
+  font-family: "DM-Sans";
+
+  src: url("../fonts/DMSans.ttf");
+}
+@font-face {
+  font-family: "DM-Sans-Italic";
+  src: url("../fonts/DMSans-Italic.ttf");
+}
+@font-face {
+  font-family: "Passion-one";
+  src: url("../fonts/PassionOne.ttf");
+}
+/*************************************************/
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DM-Sans";
+}
+
+:root {
+  --primary-color: #fff;
+  --secondary-color: #f00;
+  --accent: rgba(255, 0, 0 0.1);
+  --text: #746868;
+  --danger: red;
+  --danger-yellow: yellow;
+}
+
+body {
+  color: var(--text);
+}
+
+.danger {
+  color: var(--danger);
+  font-weight: bold;
+}

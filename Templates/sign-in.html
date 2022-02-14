@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/form/form.css">
+    <style>
+        .form--input-otp {
+            display: none;
+        }
+    </style>
+    <title>Uthiram - Sign in</title>
+</head>
+
+<body>
+    <form class="form">
+        <h2 class="form--title">Sign Up</h2>
+        <div class="form--input">
+            <label for="name">Name: </label>
+            <input type="text" class="form--input-value" name="name" id="name" data-re="name" data-msg="Invalid Name" required>
+            <p class="form--input-err"></p>
+        </div>
+        </div>
+        <div class="form--input">
+            <label for="email">E-Mail: </label>
+            <input type="text" class="form--input-value" name="email" id="email" data-re="email" data-msg="Invalid E-Mail" required>
+            <p class="form--input-err"></p>
+        </div>
+        <div class="form--input">
+            <label for="password">Password: </label>
+            <input type="password" class="form--input-value" name="password" id="password" data-re="password" data-msg="Password does not met the requirements" required>
+            <p class="form--input-err"></p>
+            <ul class="form--input-condition">
+                <li>Must contain <span class="danger">One Capital letter</span></li>
+                <li>Must contain <span class="danger">One Small letter</span></li>
+                <li>Must contain <span class="danger">One Numbers</span></li>
+                <li>Must contain <span class="danger">One Special Character</span></li>
+                <li>Atleast <span class="danger">8 Characters long</span></li>
+            </ul>
+        </div>
+        <div class="form--input">
+            <label for="number">Contact Number: </label>
+            <input type="number" class="form--input-value" name="name" id="number" data-re="mobile" data-msg="Invalid Number" required>
+            <p class="form--input-err"></p>
+        </div>
+        <div class="form--button" id="send-otp-btn">Send OTP</div>
+        <div class="form--input form--input-otp">
+            <input type="number" class="form--input-value">
+            <div class="form--button no-margin" id="confirm-otp-btn">confirm OTP</div>
+        </div>
+        <div class="form--button form--button-submit" id="sign-in-btn">Submit</div>
+        <div class="form--redirct">
+            <p>Already Have an account? <a href="./login-in.html">Login</a> here</p>
+        </div>
+    </form>
+    <script>
+        const sendOtpBtn = document.querySelector("#send-otp-btn");
+        sendOtpBtn.addEventListener("click", () => {
+            sendOtpBtn.remove();
+            document.querySelector(".form--input-otp").style.display = "flex";
+        })
+    </script>
+    <script src="../js/input-validation.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/common.css' %}">
+    <link rel="stylesheet" href="{% static '/css/form.css' %}">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">  
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <title>Uthiram - Login</title>
+</head>
+<body>
+    <form class="form" action="/login" method="post">
+        {% csrf_token %}
+        <h2 class="form--title">Login</h2>
+        </div>
+        <div class="form--input">
+            <label for="email">E-Mail: </label>
+            <input type="email" class="form--input-value" name="email" placeholder="email" id="email" required  >
+        </div>
+        <div class="form--input">
+            <label for="password">Password: </label>
+            <input type="password" class="form--input-value" name="password" placeholder="password" id="password" required>
+        </div><br>
+        <button type="submit" class="btn btn-danger">Submit</button><br>
+
+       <div class="form--redirct">
+            <p>New User? <a href="/signuppage/">SignUp</a> here</p>
+        </div>
+        <div class="form--redirct">
+            <p><a href="/forget_password">Forgot password</a> </p>
+        </div>
+    </form>
+    <script src="{% static '/js/input-validation.js' %}"></script>
+</body>
+</html>
+

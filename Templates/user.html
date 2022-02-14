@@ -1,0 +1,95 @@
+<h1>
+    user : {{user}}</h1>
+<a href="/logout">logout</a>
+<h1><u>donor registration</u></h1>
+<form action="/donor_register" method="post">
+    {%csrf_token%}
+    <input type="text" name='blood' placeholder="blood group">
+    <input type="number" name='year' placeholder="year of birth">
+    <input type="text" name='city' placeholder="city name">
+    <input type="text" name='district' placeholder="district name">
+    <input type="text" name='state' placeholder="state name">
+    <input type="text" name='country' placeholder="country name">
+    <input type="text" name='pincode' placeholder="pin code">
+    <input type="text" name='rollno' placeholder="roll no">
+    <input type="text" name='instituition' placeholder="instituition name">
+    <button type="submit">submit</button>
+</form>
+<h1><u>user edit</u></h1>
+<form action="/user_edit" method="post">
+    {%csrf_token%}
+    <input type="text" name='name' placeholder="name" value='{{user.name}}'>
+    <input type="text" name='phone' placeholder="mobile number" value='{{user.phone}}'>
+    <button type="submit">submit</button>
+</form>
+<h1><u>donor edit</u></h1>
+<form action="/donor_edit" method="post">
+    {%csrf_token%}
+    <input type="text" name='blood' placeholder="blood group" value="{{donor_details.blood}}">
+    <input type="number" name='year' placeholder="year of birth" value="{{donor_details.year_of_birth}}">
+    <input type="text" name='city' placeholder="city name" value="{{donor_details.city}}">
+    <input type="text" name='district' placeholder="district name" value="{{donor_details.district}}">
+    <input type="text" name='state' placeholder="state name" value="{{donor_details.state}}">
+    <input type="text" name='country' placeholder="country name" value="{{donor_details.country}}">
+    <input type="text" name='pincode' placeholder="pin code" value="{{donor_details.pincode}}">
+    <input type="text" name='rollno' placeholder="roll no" value="{{donor_details.rollno}}">
+    <input type="text" name='instituition' placeholder="instituition name" value="{{donor_details.instituition}}">
+    <button type="submit">submit</button>
+</form>
+<h1><u>request form</u></h1>
+<form action="request/register" method="post">
+    {%csrf_token%}
+    <input type="text" name='patientsname' placeholder=" patientsname">
+    <input type="number" name='patientsage' placeholder=" patientsage ">
+    <input type="text" name='bloodgroup' placeholder="bloodgroup ">
+    <input type="text" name='hospitalname' placeholder=" hospitalname">
+    <input type="number" name='bloodunit' placeholder="bloodunit ">
+    <input type="datetime-local" name='neededwithin' placeholder="neededwithin ">
+    <input type="text" name='city' placeholder=" city">
+    <input type="text" name='district' placeholder=" district">
+    <input type="text" name='state' placeholder=" state">
+    <input type="text" name='country' placeholder="country ">
+    <input type="number" name='pincode' placeholder="pincode ">
+
+    <button type="submit">submit</button>
+</form>
+
+<h1><u>my donations</u></h1>
+<ul>
+    {% for d in donations%}
+    <li>
+        {{d.reqid}},{{d.hospitalname}}, {{d.patientsname}}, {{d.donateddate}}
+
+    </li>
+
+    {%endfor%}
+</ul>
+<h1><u>my requests</u></h1>
+<ul>
+    {% for s in status%}
+    <li>
+        {{s.request_id}},{{s.currentstatus}}, {{s.donorid}}, {{s.completed}}
+
+        {%if s.donor_identified %}
+        <form action="request/donated" method="post">
+            {%csrf_token%}
+
+            <input type="text" name='donorid' placeholder="donorid">
+            <input type="text" name='status_id' value='{{s.id}}'>
+            <button type="submit">submit</button>
+        </form>
+        {%endif%}
+
+    </li>
+
+    {%endfor%}
+</ul>
+<ul>
+    {%if messages%} {%for m in messages %}
+    <li class="message">{{m}}</li>
+    {%endfor%} {%else%}
+    <li class="message">empty</li>
+    <li class="message">empty</li>
+    <li class="message">empty</li>
+    {%endif%}
+</ul>

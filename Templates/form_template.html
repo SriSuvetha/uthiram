@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/form/form.css">
+
+    <title>Uthiram</title>
+</head>
+
+<body>
+    <header style="height: 80px; background-color: var(--secondary-color);">
+    </header>
+
+    <form class="form">
+        <h2 class="form--title">Sign Up</h2>
+        <div class="form--input">
+            <label for="name">Name: </label>
+            <input type="text" class="form--input-value" name="name" id="name" required>
+        </div>
+        <div class="form--input">
+            <label for="blood-group">Blood Group: </label>
+            <div class="form--input-wrapper">
+                <select name="blood-group" id="blood-group" class="form--input-value">
+                    <option value="O" selected>O</option>
+                    <option value="a">A</option>
+                    <option value="b">B</option>
+                    <option value="ab">AB</option>
+                </select>
+                <div class="form--blood-type" value="positive">
+                    <div class="form--button-positive no-margin">+</div>
+                    <div class="form--button-negative no-margin">-</div>
+                </div>
+            </div>
+        </div>
+        <div class="form--input">
+            <label for="email">E-Mail: </label>
+            <input type="text" class="form--input-value" name="email" id="email" required>
+        </div>
+        <div class="form--input">
+            <label for="password">Password: </label>
+            <input type="password" class="form--input-value" name="password" id="password" required>
+        </div>
+        <div class="form--input">
+            <label for="number">Contact Number: </label>
+            <input type="number" class="form--input-value" name="name" id="number" required>
+        </div>
+        <div class="form--input form--input-otp" >
+            <input type="number" class="form--input-value">
+            <div class="form--button form--button-otp-send no-margin">Send OTP</div>
+        </div>
+        <div class="form--button form--button-submit">Submit</div>
+        <div class="form--redirct">
+            <p>Already Have an account? <a href="#">Login</a></p>
+        </div>
+    </form>
+    <script src="../js/form.js"></script>
+</body>
+
+</html>

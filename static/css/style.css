@@ -1,0 +1,91 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: -1;
+  border-bottom: 60vw solid #f00f0008;
+  border-right: 60vw solid transparent;
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+main > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main > div > * {
+  margin: 3rem 2rem;
+}
+
+.need-blood,
+.login-signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.05),
+    -4px -4px 10px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  height: 200px;
+  width: 300px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  transition: transform 0.3s ease;
+  background-color: white;
+  text-decoration: none;
+}
+
+.need-blood:hover,
+.login-signup:hover {
+  transform: scale(1.03);
+}
+.need-blood img,
+.login-signup img {
+  width: 70px;
+  margin-right: 1rem;
+}
+
+.login-signup img {
+  width: 120px;
+}
+
+.need-blood p,
+.login-signup p {
+  white-space: wrap;
+  text-align: center;
+}
+
+@media (max-width: 880px) {
+  main {
+    font-size: 1.5rem;
+  }
+  main > div {
+    flex-direction: column;
+  }
+  main > div > * {
+    margin: 1.5rem;
+  }
+  .need-blood,
+  .login-signup {
+    height: 150px;
+    width: 250px;
+  }
+}
